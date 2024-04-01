@@ -1,14 +1,15 @@
 
 .chatbot-container {
+  font-family: Arial, sans-serif;
   position: fixed;
   bottom: 10px; 
   right: 20px; 
-  background-color: #F7EEDD;
+  background-color: white;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   overflow: auto;
 }
@@ -16,11 +17,12 @@
 .chatbot-title {
   display: flex;
   align-items: center;
-  font-size: 48px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 5px;
-  background-color: #134081;
+  background-color: #FFA938;
   color: #fff;
+  padding: 10px;
 }
 
 .chatbot-header {
@@ -28,12 +30,13 @@
   align-items: center; 
   justify-content: space-between; 
   padding: 10px; 
-  background-color: #008DDA; 
+  background-color: #FFA938; 
   border-bottom: 2px solid #ccc;
   color:#fff ;
   border-radius: 5px;
   gap: 5px;
   margin: 10px;
+  font-size: 20px;
 }
 
 .chatbot-messages {
@@ -58,13 +61,22 @@
 }
 
 .user {
-  background-color: #41C9E2;
+  color: white;
+  background-color: #1E90FF;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
   text-align: left;
+  margin-bottom: 25px;
   border-radius: 63px 0px 0px 25px / 0px 2px 21px 25px
 }
 
 .bot {
-  background-color: #ACE2E1;
+  color: black;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
   
   text-align: right;
   border-radius: 63px 0px 25px 25px / 0px 2px 25px 25px;

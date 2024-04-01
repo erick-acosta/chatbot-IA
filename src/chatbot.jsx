@@ -74,7 +74,7 @@ const Chatbot = () => {
   return (
     <div className="chatbot-container">
       <div className="chatbot-header">
-        <Avatar alt="Avatar" src="./components/img/pngwing.com.png" />
+      <Avatar  src="/img/pngwing.png" alt="Avatar" />
         <h4> Georgia IA</h4>
         <div style={{ display: "flex", justifyContent: "flex-end" }}>
           <div className="icon">
@@ -101,12 +101,25 @@ const Chatbot = () => {
                 message.sender === "user" ? "user" : "bot"
               }`}
             >
-              <p>{message.text}</p>
-              <Avatar
-                alt={message.sender}
-                src={message.avatar}
-                className="bot-avatar"
-              />
+              {message.sender === "user" ? (
+                <div style={{ display: "flex",  }}>
+                  <p>{message.text}</p>
+                  <Avatar
+                    alt={message.sender}
+                    src={message.avatar}
+                    className="user-avatar"
+                  />
+                </div>
+              ) : (
+                <div style={{ display: "flex", justifyContent: "flex-start" }}>
+                  <Avatar
+                    alt={message.sender}
+                    src={message.avatar}
+                    className="bot-avatar"
+                  />
+                  <p>{message.text}</p>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -116,6 +129,13 @@ const Chatbot = () => {
             type="text"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                handleSendMessage();
+                e.preventDefault();
+              }
+            }}
+
             placeholder="Hazme una Pregunta ......"
           />
           <button onClick={handleSendMessage}>Enviar</button>
